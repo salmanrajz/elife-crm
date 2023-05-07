@@ -47,8 +47,19 @@
                                                 {{-- <a href="{{route('user.edit',$item->id)}}">
                                                 <i class="fa fa-edit"></i>
                                                 </a> --}}
-                                                <a href="{{route('user.destroy',$item->id)}}" onclick="return confirm('Are you sure you want to delete this user?');">
-                                                    <i class="fa fa-recycle"></i>
+                                                @if($item->deleted_at != '')
+                                                    <a href="{{route('user.destroy',$item->id)}}" onclick="return confirm('Are you sure you want to Enable this user?');">
+                                                        <i class="fa fa-key"></i>
+                                                    </a>
+                                                    {{-- Active --}}
+                                                    @else
+                                                    {{-- De Active --}}
+                                                    <a href="{{route('user.destroy',$item->id)}}" onclick="return confirm('Are you sure you want to Disabled this user?');">
+                                                        <i class="fa fa-recycle"></i>
+                                                    </a>
+                                                    @endif
+                                                <a href="{{route('user.edit',$item->id)}}">
+                                                    <i class="fa fa-pencil"></i>
                                                 </a>
                                                 <a href="{{route('user.edit',$item->id)}}">
                                                     <i class="fa fa-pencil"></i>

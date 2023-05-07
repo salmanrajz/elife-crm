@@ -44,10 +44,10 @@ Route::get('DailyActivation', 'ReportController@DailyActivation')->name('my.log'
 Route::get('MonthlyTarget', 'ReportController@MonthlyTarget')->name('my.target');
 
 Route::get('phpversion', function () {
-    // phpinfo();
+    phpinfo();
 
     // event(new MyEvent2('hello world'));
-    return view('dashboard.test');
+    // return view('dashboard.test');
 
 });
 

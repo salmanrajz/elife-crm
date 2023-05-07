@@ -29,7 +29,7 @@
                     <div class="col-lg-2">
                         <div class="card" id="active_div">
                             <div class="card-body text-center" onclick="reportChannel('{{auth()->user()->id}}','{{route('ajaxRequest.ChannelReport')}}','1.02','{{$cp->name}}')">
-                                <h4 class="white" style="color:#fff;">Total Activation</h4>
+                                <h4 class="white" style="color:#fff;">Total Activations</h4>
                                 <h6 class="display-5 mt-4 white" style="color:#fff;" onclick="reportChannel('{{auth()->user()->id}}','{{route('ajaxRequest.ChannelReport')}}','1.02','{{$cp->name}}')">
                                     {{$provider::TotalChannelLead('1.01','postpaid',$cp->name)}}
                                 </h6>

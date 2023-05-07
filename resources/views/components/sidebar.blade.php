@@ -31,6 +31,7 @@ $r = \App\numberdetail::select('numberdetails.type')->where('status','Available'
             <li><a href="{{route('elife.index')}}"><i class=" mdi mdi-email"></i> <span class="nav-text">Elife Plan</span></a>
             <li><a href="{{route('agency.index')}}"><i class=" mdi mdi-email"></i> <span class="nav-text">Agency ID</span></a>
             <li><a href="{{route('wallet.index')}}"><i class=" mdi mdi-email"></i> <span class="nav-text">Manager Wallet</span></a>
+            <li><a href="{{route('import_elife')}}"><i class=" mdi mdi-email"></i> <span class="nav-text">Import Number Bank</span></a>
             </li>
             @endif
             @inject('HomeCount', 'App\Http\Controllers\HomeController')

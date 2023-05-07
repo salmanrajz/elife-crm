@@ -131,13 +131,16 @@ class UserController extends Controller
     }
     public function destroy(user $user,$id)
     {
-        //
-        // return $id;
-        $d = user::findorfail($id);
-        $d->delete();
-        // return
-        notify()->info('User has been succesfully deleted');
-
+        $d = user::withTrashed()->find($id);
+        if (!is_null($d->deleted_at)) {
+            $d->restore();
+            // return
+            notify()->info('User has been succesfully Enable');
+        } else {
+            $d->delete();
+            // return
+            notify()->info('User has been succesfully deleted');
+        }
         // // return redirect()->back()->withInput();
         return redirect(route('user-index'));
 
